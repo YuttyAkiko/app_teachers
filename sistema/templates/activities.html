@@ -1,0 +1,45 @@
+{% extends 'base_dash.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between mb-2">
+  <h3>Atividades da Turma: {{ activities[0][3] }}</h3>
+  <a href="{{ url_for('add_activity', id_turma=id_turma) }}" class="btn btn-primary">Cadastrar nova atividade</a>
+</div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissable" role="alert">
+  {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Número da Atividade</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Ação</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if activities %}
+      {% for activity in activities %}
+      <tr>
+        <td>{{ activity[0] }}</td>
+        <td>{{ activity[1] }}</td>
+        <td>{{ activity[2] }}</td>
+      </tr>
+      {% endfor %}
+    {% else %}
+    <tr>
+      <td colspan="4">Não há atividades registradas para esta turma.</td>
+    </tr>
+    {% endif %}
+  </tbody>
+</table>
+{% endblock %}
