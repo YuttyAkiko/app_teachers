@@ -46,6 +46,10 @@ Ative a virtualenv:
 ``` bash
 .venv/Scripts/activate
 ```
+ou no linux
+``` bash
+source .venv/bin/activate
+```
 Instale as dependências:
 ``` bash
 pip install -r requirements.txt
@@ -60,50 +64,50 @@ No banco de dados há 3 usuários cadastrados, use-os para fazer o login:
 2 - E-mail: camila@email.com senha: `1234` <br>
 3 - E-mail: cristina@email.com senha: `1234`
 
-O desafio é criar um sistema que permita aos professores se autenticarem e interagirem com suas turmas. Este sistema web ou desktop deve oferecer funcionalidades para:
+O desafio foi criar um sistema que permita aos professores se autenticarem e interagirem com suas turmas. Este sistema web deve oferecer funcionalidades para:
 
-1. Autenticação: Os professores devem poder se autenticar no sistema com suas credenciais.
+1. Autenticação: Os professores podem se autenticar no sistema com suas credenciais.
 
 <img src="img/login.png" width="600px">
 
-2. Gerenciamento de Turmas: Permitir aos professores visualizar, registrar e excluir turmas.
+2. Gerenciamento de Turmas: CRUD - Permite aos professores visualizar, registrar e excluir turmas.
 
 <img src="img/lista_turmas.png" width="600px">
 
-3. Registro de Atividades: Os professores devem poder registrar atividades para suas turmas.
+3. Registro de Atividades: Os professores podem registrar atividades para suas turmas.
 
 <img src="img/lista_atividades.png" width="600px">
 
-4. Desconexão: Facilitar a saída segura do sistema pelos professores.
+4. Desconexão: Facilita a saída segura do sistema pelos professores.
 
 <img src="img/logout.png" width="600px">
 
 ### Aqui está um resumo dos passos principais para o desenvolvimento do sistema:
 
-1. Diagrama de Casos de Uso: Criar um diagrama para representar os atores, casos de uso e seus relacionamentos, conforme as regras de negócio descritas.
+1. Diagrama de Casos de Uso: Criei um diagrama para representar os atores, casos de uso e seus relacionamentos, conforme as regras de negócio descritas.
 
 <img src="diagrama_caso_de_uso.png" width="600px">
 
-2. Diagrama Entidade-Relacionamento (DER): Desenvolver o DER com as tabelas, relacionamentos, campos, chaves primárias e estrangeiras, especificando os tipos de dados, adequado ao SGBD utilizado.
+2. Diagrama Entidade-Relacionamento (DER): Desenvolvi o DER com as tabelas, relacionamentos, campos, chaves primárias e estrangeiras, especificando os tipos de dados, adequado ao SGBD utilizado.
 
 <img src="DER.png" width="600px">
 
-3. Script de Criação e População do Banco de Dados: Elaborar um script SQL para criar o banco de dados "saep_database" e suas tabelas, incluindo pelo menos três registros por tabela.
+3. Script de Criação e População do Banco de Dados: Elaborei um script SQL para criar o banco de dados "teachers_database" e suas tabelas, incluindo pelo menos três registros por tabela.
 
-4. Tela de Autenticação de Usuários (Login): Implementar uma tela de login para que os usuários possam se autenticar com e-mail e senha. Após a autenticação, redirecionar para a tela principal do professor.
+4. Tela de Autenticação de Usuários (Login): Implementei uma tela de login para que os usuários possam se autenticar com e-mail e senha. Após a autenticação, redirecionar para a tela principal do professor.
 
-5. Tela Principal do Professor: Desenvolver a tela principal onde o professor pode ver seu nome, acessar funcionalidades de logout, cadastro de turmas, listagem de turmas, e ações para cada turma.
+5. Tela Principal do Professor: Desenvolvi a tela principal onde o professor pode ver seu nome, acessar funcionalidades de logout, cadastro de turmas, listagem de turmas, e ações para cada turma.
 
-6. Cadastro de Turma: Criar uma tela para o cadastro de turmas, onde o professor insere o nome da turma, e registra a turma no banco de dados.
+6. Cadastro de Turma: Criei uma tela para o cadastro de turmas, onde o professor insere o nome da turma, e registra a turma no banco de dados.
 
 7. Listar Turmas do Professor: Na tela principal, listar todas as turmas atribuídas ao professor, permitindo a exclusão de turmas e a visualização de suas atividades.
 
-8. Exclusão da Turma: Implementar a funcionalidade de exclusão de turmas, com uma confirmação para o usuário e a prevenção de exclusão de turmas com atividades associadas.
+8. Exclusão da Turma: Implementei a funcionalidade de exclusão de turmas, com uma confirmação para o usuário e a prevenção de exclusão de turmas com atividades associadas.
 
-9. Tela de Atividades da Turma: Desenvolver a tela onde o professor pode cadastrar e visualizar as atividades das turmas.
+9. Tela de Atividades da Turma: Desenvolvi a tela onde o professor pode cadastrar e visualizar as atividades das turmas.
 
 10. Listar Atividades da Turma: Exibir as atividades registradas no banco de dados para a turma selecionada, juntamente com o nome da turma.
 
-11. Cadastrar Atividade: Criar uma interface para que o professor registre novas atividades para a turma, registrando a atividade no banco de dados.
+11. Cadastrar Atividade: Criei uma interface para que o professor registre novas atividades para a turma, registrando a atividade no banco de dados.
 
-12. Logout: Implementar a funcionalidade de logout que encerra a sessão do usuário e redireciona para a tela de login.
+12. Logout: Implementei a funcionalidade de logout que encerra a sessão do usuário e redireciona para a tela de login.
